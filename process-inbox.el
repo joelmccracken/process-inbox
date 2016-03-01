@@ -7,14 +7,9 @@
   (rename-buffer "*process-inbox*")
   (inbox-dired-mode))
 
-(setq process-inbox--internal-extensions
-      '(".txt"
-        ".jpg"
-        ".rb"
-        ".elm"
-        ".hs"
-        ".js"
-        ".rs"
+(setq process-inbox--external-extensions
+      '(".pdf"
+        ".gif"
         ))
 
 (defun process-inbox/visit-file ()
@@ -24,13 +19,11 @@
          (extension   (file-name-extension target-file
                                            t)))
     (if (member extension
-                process-inbox--internal-extensions)
-        (progn
-          (find-file-other-window target-file)
-          (other-window -1))
+                process-inbox--external-extensions)
+        (start-process "open-file" nil "open" target-file)
 
-      (start-process "open-file" nil "open" target-file))))
-
+      (find-file-other-window target-file)
+      (other-window -1))))
 
 
 (defun process-inbox/refile-item (file-path destination-dir)
