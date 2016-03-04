@@ -25,7 +25,6 @@
       (find-file-other-window target-file)
       (other-window -1))))
 
-
 (defun process-inbox/refile-item (file-path destination-dir)
   (let ((target-dir-fixed (file-name-as-directory (expand-file-name destination-dir)))
         dest-file-name)
@@ -33,7 +32,6 @@
           (read-string "Filename: " (file-name-nondirectory file-path)))
     (rename-file file-path (concat target-dir-fixed
                                    dest-file-name))))
-
 
 (defun process-inbox/refile ()
   (interactive)
@@ -85,7 +83,6 @@
 
     (revert-buffer)
     ))
-
 
 (define-minor-mode inbox-dired-mode
   "inbox dired mode"
