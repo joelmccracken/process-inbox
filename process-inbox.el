@@ -92,3 +92,5 @@
 
 (define-key inbox-dired-mode-map (kbd "RET")  'process-inbox/visit-file)
 (define-key inbox-dired-mode-map (kbd "r")    'process-inbox/refile)
+
+(provide 'process-inbox)
