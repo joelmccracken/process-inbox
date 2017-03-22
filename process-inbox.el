@@ -10,6 +10,7 @@
 (setq process-inbox--external-extensions
       '(".pdf"
         ".gif"
+        ".mp4"
         ))
 
 (defun process-inbox/visit-file ()
