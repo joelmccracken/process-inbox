@@ -5,12 +5,14 @@
   (interactive)
   (dired "~/Inbox")
   (rename-buffer "*process-inbox*")
-  (inbox-dired-mode))
+  (inbox-dired-mode)
+  (evil-emacs-state 1))
 
 (setq process-inbox--external-extensions
       '(".pdf"
         ".gif"
         ".mp4"
+        ".doc"
         ))
 
 (defun process-inbox/visit-file ()
